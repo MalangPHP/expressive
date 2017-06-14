@@ -1,0 +1,13 @@
+routing : contoh($app->get('/url/tujuan', [MiddlewareClass, DanController], 'nama.router'); )
+ 
+Proses Logic : 
+ - Middleware -> MiddlewareFactory
+ - Action -> Factory
+ 
+konfigurasi router : config/routes.php
+konfigurasi Action dan Factory : src/App/src/ConfigProvider.php pada array factories
+
+
+keterangan: 
+-> di handle oleh 
+

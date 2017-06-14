@@ -2,6 +2,16 @@
 
 namespace App;
 
+
+
+use App\Http\Action\CheckIfExistMiddlewareAction;
+use App\Http\Action\HomePageAction;
+use App\Http\Action\PercobaanAction;
+use App\Http\Action\PingAction;
+use App\Http\Factory\CheckIfExistMiddlewareActionFactory;
+use App\Http\Factory\HomePageFactory;
+use App\Http\Factory\PercobaanActionFactory;
+
 /**
  * The configuration provider for the App module
  *
@@ -34,10 +44,12 @@ class ConfigProvider
     {
         return [
             'invokables' => [
-                Action\PingAction::class => Action\PingAction::class,
+                PingAction::class => PingAction::class,
             ],
             'factories'  => [
-                Action\HomePageAction::class => Action\HomePageFactory::class,
+                HomePageAction::class => HomePageFactory::class,
+                PercobaanAction::class => PercobaanActionFactory::class,
+                CheckIfExistMiddlewareAction::class => CheckIfExistMiddlewareActionFactory::class
             ],
         ];
     }

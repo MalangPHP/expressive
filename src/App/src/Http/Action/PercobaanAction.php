@@ -6,7 +6,7 @@
  * Time: 20:50
  */
 
-namespace App\Action;
+namespace App\Http\Action;
 
 
 use Interop\Http\ServerMiddleware\DelegateInterface;

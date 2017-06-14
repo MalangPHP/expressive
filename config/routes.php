@@ -26,6 +26,13 @@
  * );
  */
 
-$app->get('/', App\Action\HomePageAction::class, 'home');
-$app->get('/api/ping', App\Action\PingAction::class, 'api.ping');
-$app->get('/api/percobaan');
+
+
+$app->get('/', App\Http\Action\HomePageAction::class, 'home');
+$app->get('/api/ping', App\Http\Action\PingAction::class, 'api.ping');
+$id = ['id' => '[a-z]{2,3}([-_][a-zA-Z]{2}|)'];
+
+$app->get('/percobaan/{id}', [
+    \App\Http\Action\CheckIfExistMiddlewareAction::class,
+    \App\Http\Action\PercobaanAction::class,
+], 'api.percobaan')->setOptions($id);
